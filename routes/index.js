@@ -16,4 +16,10 @@ router.get('/users/:name', function(req, res) {
   res.render( 'index', { title: 'Twitter.js - Posts by ' + name, tweets: list } );
 });
 
+router.get('/tweets/:id', function(req, res){
+	var id = parseInt(req.params.id);
+	var tweet = tweetBank.find( {id:id} );
+	res.render( 'index', { title: 'Twitter.js - Post ID:' + id, tweets: tweet } );
+});
+
 module.exports = router;

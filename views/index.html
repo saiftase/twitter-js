@@ -17,7 +17,7 @@
       {% for tweet in tweets %}
         <li>
         	<br>
-        	<b>{{tweet.name}}</b> <br>
+        	<b><li><a href="/users/{{tweet.name}}">{{tweet.name}}</a></li></b>
         	{{tweet.text}}
         	<br>
        	</li>
