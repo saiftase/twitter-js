@@ -1,6 +1,7 @@
 var express = require ('express');
 var app = express();
 var swig = require('swig');
+var routes = require('./routes')
 
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
@@ -12,11 +13,16 @@ app.use(function(req, res, next){
 	next();
 });
 
+app.use(express.static('public'));
+app.use('/', routes);
+
+/*
 app.get('/', function(req, res){
 	var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 	res.render( 'index', {title: 'Hall of Fame', people: people} );
 	// res.send("Welcome");
 });
+*/
 
 app.listen(3000, function(){
 	console.log("App listening on port 3000");
