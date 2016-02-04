@@ -56,3 +56,8 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+/*New CSS*/
+.container li{
+  list-style-type: none;
+}
